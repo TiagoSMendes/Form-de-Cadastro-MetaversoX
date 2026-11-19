@@ -2,10 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Tiago Mendes">
-    <meta name="description" content="Formulário Metaverso X">
+    <meta name="description" content="Formulário de cadastro do Metaverso X, com validação em tempo real.">
     <meta name="keywords" content="Metaverso, Metaverso X">
 
     <link rel="stylesheet" href="css/style.css">
@@ -15,84 +14,90 @@
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="img/undraw_ninja_e-52-b (1).svg" alt="">
+            <img src="img/ninja.svg" alt="" aria-hidden="true">
         </div>
 
         <div class="form">
-            <form action="#" method="dialog">
+            <form id="cadastro" novalidate>
                 <div class="form-header">
                     <div class="title">
-                        <h1>Cadastre-se Metaverso X</h1>
+                        <h1>Cadastre-se no Metaverso X</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <a href="#" class="btn-link">Entrar</a>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Primeiro nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                        <input id="firstname" type="text" aria-describedby="erro-firstname" name="firstname" placeholder="Digite seu primeiro nome" autocomplete="given-name" minlength="2" required>
+                        <small class="erro" id="erro-firstname" aria-live="polite"></small>
                     </div>
 
                     <div class="input-box">
                         <label for="lastname">Sobrenome</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                        <input id="lastname" type="text" aria-describedby="erro-lastname" name="lastname" placeholder="Digite seu sobrenome" autocomplete="family-name" minlength="2" required>
+                        <small class="erro" id="erro-lastname" aria-live="polite"></small>
                     </div>
 
                     <div class="input-box">
                         <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu email" required>
+                        <input id="email" type="email" aria-describedby="erro-email" name="email" placeholder="Digite seu e-mail" autocomplete="email" required>
+                        <small class="erro" id="erro-email" aria-live="polite"></small>
                     </div>
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" type="tel" aria-describedby="erro-number" name="number" placeholder="(xx) 9xxxx-xxxx" inputmode="numeric" autocomplete="tel" maxlength="15" required>
+                        <small class="erro" id="erro-number" aria-live="polite"></small>
                     </div>
 
                     <div class="input-box">
                         <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                        <input id="password" type="password" aria-describedby="erro-password" name="password" placeholder="Mínimo de 8 caracteres" autocomplete="new-password" minlength="8" required>
+                        <small class="erro" id="erro-password" aria-live="polite"></small>
                     </div>
 
                     <div class="input-box">
-                        <label for="Confirmpassword">Confirme sua senha</label>
-                        <input id="Confirmpassword" type="password" name="Confirmpassword" placeholder="Digite sua senha" required>
+                        <label for="confirmpassword">Confirme sua senha</label>
+                        <input id="confirmpassword" type="password" aria-describedby="erro-confirmpassword" name="confirmpassword" placeholder="Repita sua senha" autocomplete="new-password" required>
+                        <small class="erro" id="erro-confirmpassword" aria-live="polite"></small>
                     </div>
                 </div>
 
-                <div class="gender-inputs">
-                    <div class="gender-title">
-                        <h6>Gênero</h6>
-                    </div>
+                <fieldset class="gender-inputs">
+                    <legend class="gender-title">Gênero</legend>
                     <div class="gender-group">
                         <div class="gender-input">
-                            <input type="radio" id="female" name="gender">
+                            <input type="radio" id="female" name="gender" value="feminino">
                             <label for="female">Feminino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input type="radio" id="male" name="gender">
+                            <input type="radio" id="male" name="gender" value="masculino">
                             <label for="male">Masculino</label>
                         </div>
 
                         <div class="gender-input">
-                            <input type="radio" id="others" name="gender">
+                            <input type="radio" id="others" name="gender" value="outros">
                             <label for="others">Outros</label>
                         </div>
 
                         <div class="gender-input">
-                            <input type="radio" id="none" name="gender">
+                            <input type="radio" id="none" name="gender" value="nao-informado">
                             <label for="none">Prefiro não dizer</label>
                         </div>
                     </div>
-                </div>
+                </fieldset>
 
                 <div class="continue-button">
-                    <button><a href="#">Continuar</a></button>
-                </div>    
+                    <button type="submit">Continuar</button>
+                </div>
+                <p class="sucesso" id="sucesso" role="status" hidden>Cadastro realizado com sucesso! Bem-vindo ao Metaverso X.</p>
             </form>
         </div>
     </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
