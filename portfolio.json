@@ -1,0 +1,20 @@
+{
+  "_sobre": "Lido automaticamente pelo portfólio de Tiago Mendes. Edite para mudar como o projeto aparece lá.",
+  "titulo": {
+    "pt": "Formulário de Cadastro MetaversoX",
+    "en": "MetaversoX sign-up form"
+  },
+  "descricao": {
+    "pt": "Formulário responsivo com validação em tempo real, máscara de celular e conferência de senha.",
+    "en": "Responsive form with real-time validation, phone mask and password confirmation."
+  },
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Formulários"
+  ],
+  "site": "",
+  "imagem": "portfolio.webp",
+  "ordem": 6
+}
